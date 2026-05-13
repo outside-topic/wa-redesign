@@ -78,3 +78,63 @@ sliderBgSettings.forEach(function(el) {
     }
 });
 })
+
+//
+function openVideo(url) {
+  document.getElementById("videoFrame").src = url + "?autoplay=1";
+}
+
+// stop video when modal closes
+document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+  document.getElementById("videoFrame").src = "";
+});
+
+// global affiliation swiper
+if(document.querySelector('.gaa-swiper')){
+    new Swiper('.gaa-swiper', {
+        spaceBetween: '5px',
+        centeredSlides: true,
+        speed: 2000, // smoother marquee feel
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false, // allows autoplay to continue after hover
+        },
+        loop: true,
+        slidesPerView: 'auto',
+        allowTouchMove: false,
+    })
+}
+
+
+// Testimonial swiper
+if(document.querySelector('.testimonial-swiper')){
+    const testimonialSwiper = new Swiper('.testimonial-swiper', {
+        spaceBetween: "50px",
+        centeredSlides: true,
+        speed: 2000, // smoother marquee feel
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false, // allows autoplay to continue after hover
+        },
+        loop: true,
+        slidesPerView: 3,
+        allowTouchMove: true,
+    })
+}
+
+if(document.querySelector('.global-alumni-swiper')){
+    const globalAlumniSwiper = new Swiper('.global-alumni-swiper', {
+        spaceBetween: '5px',
+        centeredSlides: true,
+        speed: 2000, // smoother marquee feel
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false, // allows autoplay to continue after hover
+            reverseDirection: true
+        },
+        loop: true,
+        slidesPerView: 'auto',
+        allowTouchMove: false,
+    }) 
+    globalAlumniSwiper.changeLanguageDirection('ltr')
+}
