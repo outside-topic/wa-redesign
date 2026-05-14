@@ -116,6 +116,16 @@ if(document.querySelector('.testimonial-swiper')){
             delay: 2000,
             disableOnInteraction: false, // allows autoplay to continue after hover
         },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            }
+        },
         loop: true,
         slidesPerView: 3,
         allowTouchMove: true,

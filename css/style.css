@@ -2100,3 +2100,711 @@ a {
 }
 
 /* ============ Footer Area End ============ */
+
+/* ============ 
+  About page Area Start 
+  
+============ */
+
+
+.ward-about-section {
+  /* background: linear-gradient(135deg, var(--bg-gray) 0%, var(--light-wheat) 100%); */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ward-about-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--light-pink) 0%, transparent 70%);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ward-about-container {
+  position: relative;
+  z-index: 1;
+}
+
+.ward-about-heading-wrap {
+  margin-bottom: 2rem;
+}
+
+.ward-about-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+  animation: ward-about-fadeInUp 0.6s ease-out;
+}
+
+.ward-about-tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  animation: ward-about-fadeInUp 0.8s ease-out;
+}
+
+.ward-about-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  position: relative;
+  animation: ward-about-slideIn 1s ease-out;
+}
+
+.ward-about-divider::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(113, 96, 39, 0.2);
+}
+
+.ward-about-body-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3d3d3d;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+  animation: ward-about-fadeIn 1.2s ease-out;
+}
+
+.ward-about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .ward-about-stats-grid {
+    grid-template-columns: repeat(1, 1fr);
+    position: sticky;
+    top: 40px;
+  }
+}
+
+.ward-about-stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(113, 96, 39, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.ward-about-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--light-pink));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.ward-about-stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(113, 96, 39, 0.15);
+  border-color: var(--light-wheat);
+}
+
+.ward-about-stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ward-about-stat-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--bg-gray), var(--light-wheat));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.ward-about-stat-card:hover .ward-about-stat-icon {
+  background: linear-gradient(135deg, var(--primary-color), var(--light-pink));
+  color: var(--white);
+  transform: rotate(360deg) scale(1.1);
+}
+
+.ward-about-stat-number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.ward-about-stat-label {
+  font-size: 0.95rem;
+  color: #5a5a5a;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ward-about-affiliations-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(113, 96, 39, 0.15);
+}
+
+.ward-about-affiliations-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.ward-about-affiliations-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.ward-about-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  animation: ward-about-fadeIn 1.5s ease-out;
+}
+
+.ward-about-badge {
+  background: var(--white);
+  padding: 0.85rem 1.5rem;
+  border-radius: 50px;
+  border: 2px solid var(--light-wheat);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(113, 96, 39, 0.06);
+  flex: 1;
+}
+
+.ward-about-badge-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+}
+
+.ward-about-badge:hover .ward-about-badge-logo {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.ward-about-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--light-wheat);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.ward-about-badge:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(113, 96, 39, 0.15);
+    transform: translateY(-4px);
+}
+@keyframes ward-about-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ward-about-fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ward-about-slideIn {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ward-about-section {
+    padding: 50px 0;
+  }
+
+  .ward-about-stat-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .ward-about-stat-number {
+    font-size: 1.75rem;
+  }
+
+  .ward-about-affiliations-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+}
+
+
+.ward-mv-section {
+  font-family: var(--font-family), sans-serif;
+  background: linear-gradient(135deg, var(--bg-gray) 0%, var(--light-wheat) 100%);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ward-mv-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(113, 96, 39, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ward-mv-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(188, 172, 148, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ward-mv-container {
+  position: relative;
+  z-index: 1;
+}
+
+.ward-mv-heading {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.ward-mv-heading-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.ward-mv-heading-subtitle {
+  font-size: 1.1rem;
+  color: #5a5a5a;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ward-mv-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  height: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 40px rgba(113, 96, 39, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ward-mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--light-pink) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.ward-mv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(113, 96, 39, 0.15);
+  border-color: var(--primary-color);
+}
+
+.ward-mv-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ward-mv-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--light-pink) 100%);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(113, 96, 39, 0.25);
+  transition: all 0.4s ease;
+}
+
+.ward-mv-card:hover .ward-mv-icon-wrapper {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 12px 30px rgba(113, 96, 39, 0.35);
+}
+
+.ward-mv-icon {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.ward-mv-card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.ward-mv-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.ward-mv-card:hover .ward-mv-card-title::after {
+  width: 80px;
+}
+
+.ward-mv-card-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.ward-mv-focus-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ward-mv-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  background: rgba(113, 96, 39, 0.08);
+  color: var(--primary-color);
+  border: 1.5px solid rgba(113, 96, 39, 0.2);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.ward-mv-badge:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(113, 96, 39, 0.3);
+}
+
+.ward-mv-badge-icon {
+  font-size: 0.75rem;
+  margin-right: 0.4rem;
+}
+
+@media (max-width: 991.98px) {
+  .ward-mv-section {
+    padding: 3rem 0;
+  }
+  
+  .ward-mv-heading-title {
+    font-size: 2rem;
+  }
+  
+  .ward-mv-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ward-mv-heading-title {
+    font-size: 1.75rem;
+  }
+  
+  .ward-mv-heading-subtitle {
+    font-size: 1rem;
+  }
+  
+  .ward-mv-card-title {
+    font-size: 1.5rem;
+  }
+  
+  .ward-mv-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .ward-mv-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+  }
+  
+  .ward-mv-icon {
+    font-size: 1.75rem;
+  }
+}
+
+
+.ward-success-section {
+  font-family: var(--font-family), sans-serif;
+  background-color: var(--bg-gray);
+  padding: 80px 0;
+}
+
+.ward-success-title {
+  font-family: var(--font-family), sans-serif;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.ward-success-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  border-radius: 2px;
+}
+
+.ward-success-subtitle {
+  color: #5a5a5a;
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.ward-success-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 320px;
+  background-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(113, 96, 39, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.ward-success-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(113, 96, 39, 0.25);
+}
+
+.ward-success-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: grayscale(20%);
+}
+
+.ward-success-card:hover .ward-success-card-img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.ward-success-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(113, 96, 39, 0.85);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+.ward-success-card:hover .ward-success-card-overlay {
+  background: rgba(113, 96, 39, 0.75);
+}
+
+.ward-success-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--white);
+}
+
+.ward-success-card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  transition: transform 0.4s ease;
+}
+
+.ward-success-card:hover .ward-success-card-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.ward-success-card-number {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.ward-success-card-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.ward-success-card-plus {
+  font-size: 2rem;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+/* Responsive Grid Adjustments */
+@media (min-width: 576px) {
+  .ward-success-card {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ward-success-card {
+    height: 280px;
+  }
+  .ward-success-card-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ward-success-card {
+    height: 320px;
+  }
+}
+
+/* Counter Animation Base */
+@keyframes ward-success-countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ward-success-card-number.ward-success-animate {
+  animation: ward-success-countUp 0.8s ease-out forwards;
+}
+
+/* Fallback for broken images */
+.ward-success-card-img-error {
+  display: none;
+}
+
+/* ============ 
+  About page Area End
+============ */
