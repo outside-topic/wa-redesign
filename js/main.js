@@ -173,3 +173,87 @@ if(document.querySelector('.ward-success-animate')){
     });
 
 }
+
+
+// faq page js
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('wardFaqSearch');
+  const noResults = document.getElementById('wardFaqNoResults');
+  const accordionItems = document.querySelectorAll('.ward-faq-accordion .accordion-item');
+  const tabContent = document.getElementById('ward-faq-tabContent');
+  const tabButtons = document.querySelectorAll('#ward-faq-tab .nav-link');
+  
+  if(searchInput){
+
+      function filterFAQs() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        let hasResults = false;
+        
+        if (searchTerm === '') {
+          accordionItems.forEach(item => {
+            item.style.display = 'block';
+          });
+          noResults.classList.remove('active');
+          return;
+        }
+        
+        accordionItems.forEach(item => {
+          const question = item.getAttribute('data-question').toLowerCase();
+          const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+          
+          if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+            item.style.display = 'block';
+            hasResults = true;
+            
+            // Open matching accordion
+            const collapse = item.querySelector('.accordion-collapse');
+            if (collapse && !collapse.classList.contains('show')) {
+              new bootstrap.Collapse(collapse, { show: true });
+            }
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        
+        if (hasResults) {
+          noResults.classList.remove('active');
+          // Show all tabs when searching
+          document.querySelectorAll('.tab-pane').forEach(pane => {
+            pane.classList.add('show', 'active');
+          });
+        } else {
+          noResults.classList.add('active');
+        }
+      }
+      
+      searchInput.addEventListener('input', filterFAQs);
+      
+      // Reset search when clicking tabs
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          searchInput.value = '';
+          accordionItems.forEach(item => {
+            item.style.display = 'block';
+          });
+          noResults.classList.remove('active');
+          document.querySelectorAll('.tab-pane').forEach(pane => {
+            if (!pane.classList.contains('active')) {
+              pane.classList.remove('show', 'active');
+            }
+          });
+        });
+      });
+      
+      // Smooth scroll for CTA
+      document.querySelector('.ward-faq-cta-btn').addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#contact') {
+          e.preventDefault();
+          // Replace with actual contact logic or page scroll
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          alert('Contact form placeholder - Connect this to your contact section');
+        }
+      });
+      
+  }
+
+});
