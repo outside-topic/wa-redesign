@@ -228,7 +228,8 @@ a {
   font-size: 15px;
   color: #d4d3d3;
   font-style: normal;
-  display: inline-block vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
   font-weight: 900;
 }
 
@@ -243,7 +244,8 @@ a {
   font-size: 15px;
   color: #d4d3d3;
   font-style: normal;
-  display: inline-block vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
   font-weight: 900;
 }
 
@@ -271,11 +273,11 @@ a {
 
 @media screen and (min-width: 992px) {
 
-  .hero-slider .swiper-container-horizontal>.swiper-pagination-bullets,
+  /* .hero-slider .swiper-container-horizontal>.swiper-pagination-bullets,
   .hero-slider .swiper-pagination-custom,
   .hero-slider .swiper-pagination-fraction {
     /*     display: none; */
-  }
+  /* }  */
 }
 
 .swiper-pagination {
@@ -290,7 +292,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
-}
+
 
 @media (min-width: 767px) {
   .hero-slider .swiper-container-horizontal>.swiper-pagination-bullets {
@@ -1395,7 +1397,7 @@ a {
     translateX(6px);
 }
 
-.category-card .icon {}
+/* .category-card .icon {} */
 
 /* =========================================
    Responsive
@@ -1851,13 +1853,13 @@ a {
 
 /* ============ Global Alumni Area Start ============ */
 
-.globla-alumni .right-upside-down-shape{
+.globla-alumni .right-upside-down-shape {
   top: 0;
   z-index: 99;
   background-color: #fff;
 }
 
-.globla-alumni .left-down-shape{
+.globla-alumni .left-down-shape {
   bottom: 0;
   top: auto;
   background-color: #fff;
@@ -1899,32 +1901,32 @@ a {
     padding: 0px;
   }
 
-  .facebook-bg{
-      background: #3B5998;
+  .facebook-bg {
+    background: #3B5998;
   }
 
-  .twitter-bg{
+  .twitter-bg {
     background: #55ACEE;
   }
 
-  .google-bg{
+  .google-bg {
     background: #DD4B39;
   }
 
 }
 
-.footer-social-icon{
+.footer-social-icon {
   margin-bottom: 20px;
 }
 
-.footer-social-icon a{
+.footer-social-icon a {
   color: #fff;
   display: inline-block;
-  
+
   line-height: 40px;
 }
 
-.footer-social-icon svg{
+.footer-social-icon svg {
   padding: 10px;
   height: 20px;
   width: 20px;
@@ -1955,7 +1957,8 @@ a {
   }
 }
 
-.single-cta i, .single-cta svg {
+.single-cta i,
+.single-cta svg {
   color: var(--primary-color);
   font-size: 30px;
   float: left;
@@ -1980,14 +1983,15 @@ a {
 .footer-logo {
   margin-bottom: 30px;
 }
+
 .footer-logo img {
-    max-width: 200px;
+  max-width: 200px;
 }
 
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
-      color: #7e7e7e;
+  color: #7e7e7e;
   line-height: 28px;
 }
 
@@ -2028,7 +2032,7 @@ a {
   margin-bottom: 12px;
 }
 
-.footer-widget ul li a:hover{
+.footer-widget ul li a:hover {
   color: #ff5e14;
 }
 
@@ -2051,13 +2055,13 @@ a {
 }
 
 .subscribe-form button {
-    position: absolute;
-    color: var(--white);
-    right: 0;
-    background: var(--primary-color);
-    padding: 13px 20px;
-    border: 1px solid var(--primary-color);
-    top: 0;
+  position: absolute;
+  color: var(--white);
+  right: 0;
+  background: var(--primary-color);
+  padding: 13px 20px;
+  border: 1px solid var(--primary-color);
+  top: 0;
 }
 
 .subscribe-form button i {
@@ -2065,7 +2069,8 @@ a {
   font-size: 22px;
   transform: rotate(-6deg);
 }
-.copyright-area{
+
+.copyright-area {
   background: #202020;
   padding: 25px 0;
 }
@@ -2076,7 +2081,7 @@ a {
   color: #878787;
 }
 
-.copyright-text p a{
+.copyright-text p a {
   color: var(--primary-color);
 }
 
@@ -2085,7 +2090,7 @@ a {
   margin-left: 20px;
 }
 
-.footer-menu li:hover a{
+.footer-menu li:hover a {
   color: #ff5e14;
 }
 
