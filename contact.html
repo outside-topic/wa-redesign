@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+
+    <!-- fontawesom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>World Academy Homepage</title>
+</head>
+<body>
+
+    <!-- ============ top nav start ============ -->
+
+    <div class="topnav">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-4 col-6 text-center d-lg-block d-none order-lg-1 order-2">
+                    <button type="button" class="btn button_bg_colored"> <i class="fa-solid fa-magnifying-glass"></i> Search </button>
+                </div>
+
+                <div class="col-lg-4 text-center order-lg-2 order-1">
+                    <a href="#"><img class="main-logo" src="./images/New and Final Logo.png" alt=""></a>
+                </div>
+
+                <div class="col-lg-4 col-12 text-center order-lg-3 order-3">
+                    <a href="#" class="btn button_bg_colored"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ top nav end ============ -->
+
+    <!-- ============ main nav start ============ -->
+
+    <nav class="navbar navbar-expand-lg main-nav sticky-top">
+        <div class="container-fluid">
+
+            <button type="button" class="btn button_bg_colored d-lg-none d-block"> <i class="fa-solid fa-magnifying-glass"></i> Search </button>
+
+            <button class="navbar-toggler ms-auto text-white fs-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About Us</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Accreditation
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Affiliation
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Partner</a></li>
+                            <li><a class="dropdown-item" href="#">Trainer</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Self Paced Courses</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">FAQ</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ main nav end ============ -->
+
+    <section class="ward-contact-section">
+    <div class="container">
+        <div class="row g-4 g-lg-5">
+        <!-- Contact Form Column - 60% -->
+        <div class="col-12 col-lg-7">
+            <div class="ward-contact-card p-4 p-md-5">
+            <h1 class="ward-contact-heading">Get in touch with us now.</h1>
+            <div class="ward-contact-divider"></div>
+            <p class="ward-contact-subtext">Fill out the form below and we'll get back to you as soon as possible</p>
+            
+            <form class="ward-contact-form needs-validation" novalidate id="wardContactForm">
+                <div class="row g-3">
+                <div class="col-12">
+                    <div class="form-floating">
+                    <input type="text" class="form-control" id="ward-contact-name" placeholder="Full Name" required aria-describedby="nameHelp">
+                    <label for="ward-contact-name">Name *</label>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="form-floating">
+                    <input type="email" class="form-control" id="ward-contact-email" placeholder="name@example.com" required>
+                    <label for="ward-contact-email">Email Address *</label>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="form-floating">
+                    <input type="text" class="form-control" id="ward-contact-subject" placeholder="Subject" required>
+                    <label for="ward-contact-subject">Subject *</label>
+                    <div class="invalid-feedback">Please enter a subject.</div>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a message here" id="ward-contact-message" style="height: 150px" required></textarea>
+                    <label for="ward-contact-message">Message *</label>
+                    <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="col-12 mt-4">
+                    <button type="submit" class="ward-contact-btn-send">
+                    Send Message <i class="bi bi-send ms-2"></i>
+                    </button>
+                    <div class="alert alert-success mt-3 d-none" id="ward-success-message" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i>Thank you! Your message has been sent successfully.
+                    </div>
+                </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        
+        <!-- Offices Column - 40% -->
+        <div class="col-12 col-lg-5 ward-contact-offices-col">
+            <div class="ward-contact-card p-4 p-md-5 h-100">
+            <h2 class="ward-contact-offices-title">Our Main Offices</h2>
+            <div class="ward-contact-divider"></div>
+            
+            <div class="ward-contact-office-item">
+                <h3 class="ward-contact-office-name">United Kingdom (Registered Office)</h3>
+                <div class="ward-contact-office-detail">
+                <i class="bi bi-geo-alt-fill ward-contact-icon" aria-hidden="true"></i>
+                <span>Office 2677A, 182-184 High Street North,<br>East Ham, London E6 2JA, UK</span>
+                </div>
+            </div>
+            
+            <div class="ward-contact-office-item">
+                <h3 class="ward-contact-office-name">United Kingdom (Operational Office)</h3>
+                <div class="ward-contact-office-detail">
+                <i class="bi bi-building ward-contact-icon" aria-hidden="true"></i>
+                <span>Office 2677A, 182-184 High Street North,<br>East Ham, London E6 2JA, UK</span>
+                </div>
+            </div>
+            
+            <div class="ward-contact-contact-bar">
+                <div class="ward-contact-office-detail align-items-center mb-3">
+                <i class="bi bi-telephone-fill ward-contact-icon" style="color: var(--white);" aria-hidden="true"></i>
+                <div>
+                    <div class="small opacity-75">Phone</div>
+                    <a href="tel:+02034320868">+02034320868</a>
+                </div>
+                </div>
+                <div class="ward-contact-office-detail align-items-center mb-0">
+                <i class="bi bi-envelope-fill ward-contact-icon" style="color: var(--white);" aria-hidden="true"></i>
+                <div>
+                    <div class="small opacity-75">Email Us</div>
+                    <a href="mailto:info@worldacademy.uk">info@worldacademy.uk</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- ============ footer design start ============ -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>1010 Avenue, sw 54321,</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>9876543210 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="./images/New and Final Logo White-10.png" class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>World Academy for Research & Development – Trusted since 2008 for globally recognized credentials and strategic partnerships that drive professional growth and organizational success.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2026, All Right Reserved <a href="https://www.worldacademy.uk">World Academy</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ============ footer design end ============ -->
+
+    <!-- js -->
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- fontawesom -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    
+
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

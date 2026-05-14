@@ -2808,3 +2808,224 @@ a {
 /* ============ 
   About page Area End
 ============ */
+
+
+/* ============ 
+  Contact page Area Start
+============ */
+
+.ward-contact-body {
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--bg-gray) 0%, var(--light-wheat) 100%);
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+.ward-contact-section {
+  padding: 80px 0;
+}
+
+.ward-contact-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(113, 96, 39, 0.08);
+  border: 1px solid rgba(188, 172, 148, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ward-contact-card:hover {
+  box-shadow: 0 15px 50px rgba(113, 96, 39, 0.12);
+  transform: translateY(-2px);
+}
+
+.ward-contact-heading {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 2.25rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.ward-contact-subtext {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.ward-contact-form .form-floating > .form-control,
+.ward-contact-form .form-floating > .form-select {
+  border: 1.5px solid var(--light-wheat);
+  border-radius: 12px;
+  font-family: var(--font-family);
+  transition: all 0.25s ease;
+}
+
+.ward-contact-form .form-floating > .form-control:focus,
+.ward-contact-form .form-floating > .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(113, 96, 39, 0.15);
+}
+
+.ward-contact-form .form-floating > label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.ward-contact-form .form-control.is-invalid,
+.ward-contact-form .was-validated .form-control:invalid {
+  border-color: #dc3545;
+  background-image: none;
+}
+
+.ward-contact-form .form-control.is-valid,
+.ward-contact-form .was-validated .form-control:valid {
+  border-color: var(--primary-color);
+  background-image: none;
+}
+
+.ward-contact-verification-box {
+  background: var(--gray);
+  border: 1.5px dashed var(--light-pink);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ward-contact-verification-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  background: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+  user-select: all;
+}
+
+.ward-contact-btn-send {
+  background: var(--primary-color);
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.875rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(113, 96, 39, 0.25);
+}
+
+.ward-contact-btn-send:hover {
+  background: #5a4d1f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(113, 96, 39, 0.35);
+  color: var(--white);
+}
+
+.ward-contact-btn-send:active {
+  transform: translateY(0);
+}
+
+.ward-contact-offices-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.ward-contact-office-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--light-wheat);
+}
+
+.ward-contact-office-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+}
+
+.ward-contact-office-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.ward-contact-office-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+.ward-contact-office-detail:last-child {
+  margin-bottom: 0;
+}
+
+.ward-contact-icon {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ward-contact-contact-bar {
+  background: linear-gradient(135deg, var(--light-pink) 0%, var(--primary-color) 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: var(--white);
+  margin-top: 1.5rem;
+}
+
+.ward-contact-contact-bar a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.ward-contact-contact-bar a:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+.ward-contact-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--light-pink));
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .ward-contact-section {
+    padding: 50px 0;
+  }
+  .ward-contact-heading {
+    font-size: 1.875rem;
+  }
+  .ward-contact-offices-col {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ward-contact-heading {
+    font-size: 1.625rem;
+  }
+  .ward-contact-card {
+    border-radius: 12px;
+  }
+  .ward-contact-btn-send {
+    width: 100%;
+  }
+}
+
+/* ============ 
+  Contact page Area End
+============ */

@@ -85,9 +85,12 @@ function openVideo(url) {
 }
 
 // stop video when modal closes
-document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-  document.getElementById("videoFrame").src = "";
-});
+if(document.querySelector('.hidden.bs.modal')){
+
+    document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+      document.getElementById("videoFrame").src = "";
+    });
+}
 
 // global affiliation swiper
 if(document.querySelector('.gaa-swiper')){
@@ -147,4 +150,26 @@ if(document.querySelector('.global-alumni-swiper')){
         allowTouchMove: false,
     }) 
     globalAlumniSwiper.changeLanguageDirection('ltr')
+}
+
+
+if(document.querySelector('.ward-success-animate')){
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const numbers = entry.target.querySelectorAll('.ward-success-card-number');
+            numbers.forEach(num => {
+              num.classList.add('ward-success-animate');
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+    
+      const section = document.querySelector('.ward-success-section');
+      if (section) observer.observe(section);
+    });
+
 }
