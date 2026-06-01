@@ -4073,3 +4073,44 @@ a {
 /* ============ 
   ============ Physical Program Details Page End ============
 ============ */
+
+/* ============ Course Categories Filter Styles ============ */
+.wac-filter-btn {
+  border: 1.5px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  padding: 10px 28px;
+  font-weight: 600;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.wac-filter-btn:hover {
+  background-color: rgba(113, 96, 39, 0.06);
+  transform: translateY(-1px);
+}
+
+.wac-filter-btn.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(113, 96, 39, 0.25);
+}
+
+.wac-filter-btn:focus {
+  outline: none;
+}
+
+/* Sticky filter tab container */
+.wac-sticky-tab-container {
+  position: sticky;
+  top: 75px; /* height offset below the main navigation navbar */
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 18px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
