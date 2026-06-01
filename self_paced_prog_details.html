@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome (v6+) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap 5.3.x -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Professional Certified Manager (PCM) - Self-Paced Program</title>
+
+    <style>
+        /* Custom self-paced page styles to enhance visual excellence */
+        :root {
+            --self-paced-gradient: linear-gradient(135deg, #265367 0%, #1e3a47 100%);
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+        }
+
+        .wac-hero-section.self-paced-hero {
+            background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom rating stars */
+        .wac-stars {
+            color: #fbbf24;
+            font-size: 0.95rem;
+        }
+
+        /* Video styling */
+        .wac-video-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #000;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .wac-video-preview {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .wac-video-preview:hover {
+            transform: scale(1.02);
+        }
+
+        .wac-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wac-play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #716027;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            padding-left: 6px;
+            box-shadow: 0 0 30px rgba(113, 96, 39, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse-ring 2s infinite;
+        }
+
+        .wac-video-preview:hover .wac-play-button {
+            background: #265367;
+            transform: scale(1.1);
+            box-shadow: 0 0 35px rgba(38, 83, 103, 0.8);
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(113, 96, 39, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(113, 96, 39, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(113, 96, 39, 0); }
+        }
+
+        /* Custom Cards for Exam & Important Info */
+        .guideline-card {
+            border: none;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            border-left: 5px solid #265367;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .guideline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        .guideline-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(38, 83, 103, 0.1);
+            color: #265367;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-right: 15px;
+        }
+
+        .info-card {
+            border: none;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            border-left: 5px solid #716027;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        .info-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(113, 96, 39, 0.1);
+            color: #716027;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-right: 15px;
+        }
+
+        /* Badges */
+        .wac-badge-self-paced {
+            background-color: rgba(38, 83, 103, 0.15) !important;
+            color: #265367 !important;
+            font-weight: 600;
+        }
+
+        .wac-badge-duration {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            color: #10b981 !important;
+            font-weight: 600;
+        }
+
+        .wac-badge-videos {
+            background-color: rgba(245, 158, 11, 0.15) !important;
+            color: #d97706 !important;
+            font-weight: 600;
+        }
+
+        /* Checklists */
+        .wac-checkmark-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .wac-checkmark-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+
+        .wac-checkmark-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #10b981;
+            font-size: 1.1rem;
+        }
+
+        /* Takeaway grid */
+        .takeaway-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .takeaway-card:hover {
+            border-color: #716027;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+
+        /* Assignment flow timeline */
+        .assignment-timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px dashed #cbd5e1;
+        }
+
+        .assignment-step {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .assignment-step::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #716027;
+            border: 2px solid white;
+        }
+
+        /* Feedback cards */
+        .feedback-card {
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #e2e8f0;
+            padding: 24px;
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .feedback-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #716027;
+        }
+
+        /* Modal styling */
+        .wac-modal .modal-content {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .wac-modal-header {
+            background: linear-gradient(135deg, #716027 0%, #5d4f20 100%);
+            color: white;
+            padding: 25px;
+            border: none;
+            position: relative;
+        }
+
+        .wac-modal-header .btn-close {
+            filter: invert(1) grayscale(1) brightness(2);
+        }
+
+        .wac-modal-body {
+            padding: 30px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #716027;
+            box-shadow: 0 0 0 0.25rem rgba(113, 96, 39, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ top nav start ============ -->
+    <div class="topnav">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-6 text-center d-lg-block d-none order-lg-1 order-2">
+                    <button type="button" class="btn button_bg_colored"> <i class="fa-solid fa-magnifying-glass"></i> Search </button>
+                </div>
+                <div class="col-lg-4 text-center order-lg-2 order-1">
+                    <a href="#"><img class="main-logo" src="./images/New and Final Logo.png" alt="World Academy Logo"></a>
+                </div>
+                <div class="col-lg-4 col-12 text-center order-lg-3 order-3">
+                    <a href="#" class="btn button_bg_colored"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============ top nav end ============ -->
+
+    <!-- ============ main nav start ============ -->
+    <nav class="navbar navbar-expand-lg main-nav sticky-top">
+        <div class="container-fluid">
+            <button type="button" class="btn button_bg_colored d-lg-none d-block"> <i class="fa-solid fa-magnifying-glass"></i> Search </button>
+            <button class="navbar-toggler ms-auto text-white fs-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Physical Programs</a></li>
+                            <li><a class="dropdown-item" href="#">Self Paced Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Accreditation</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">CPD Approved</a></li>
+                            <li><a class="dropdown-item" href="#">ISO Certified</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Affiliation</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">University Partners</a></li>
+                            <li><a class="dropdown-item" href="#">Corporate Trainers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="#">Self Paced Courses</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ============ main nav end ============ -->
+
+    <div class="page-wrapper" style="background-color: #f8fafc;">
+        <div class="wac-program-page">
+            
+            <!-- HERO SECTION -->
+            <section class="wac-hero-section self-paced-hero">
+                <div class="wac-hero-overlay"></div>
+                <div class="container position-relative">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Programs</a></li>
+                            <li class="breadcrumb-item"><a href="#">Self-Paced</a></li>
+                            <li class="breadcrumb-item active">PCM</li>
+                        </ol>
+                    </nav>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <div class="mb-3 d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill wac-bg-brand px-3 py-2">
+                                    <i class="fas fa-bolt me-2"></i>
+                                    Self-Paced Learning
+                                </span>
+                                <span class="badge rounded-pill wac-bg-glass px-3 py-2">
+                                    <i class="fas fa-globe me-2"></i>
+                                    100% Online
+                                </span>
+                                <span class="badge rounded-pill bg-success px-3 py-2">
+                                    <i class="fas fa-certificate me-2"></i>
+                                    Globally Recognized
+                                </span>
+                            </div>
+
+                            <h1 class="display-4 fw-bold mb-3">
+                                Professional Certified Manager (PCM)
+                                <span class="wac-text-brand d-block">Strategic Course</span>
+                            </h1>
+
+                            <p class="lead text-white-50 mb-4 fs-5" style="max-width: 680px;">
+                                Accelerate your corporate career with our elite management qualification. Master executive leadership, data-driven decisions, and organization strategy on your own schedule.
+                            </p>
+
+                            <div class="d-flex flex-wrap align-items-center gap-4">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="wac-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-white fw-semibold">4.9</span>
+                                    <span class="text-white-50 small">(342 reviews)</span>
+                                </div>
+                                <div class="text-white-50">|</div>
+                                <div class="text-white">
+                                    <i class="far fa-eye me-2 text-warning"></i> 2,450 Students Enrolled
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAIN CONTENT & SIDEBAR -->
+            <main class="container py-5">
+                <div class="row g-5">
+                    
+                    <!-- Left Content Area -->
+                    <div class="col-lg-8">
+                        
+                        <!-- Course Video Preview -->
+                        <div class="wac-video-card">
+                            <div class="wac-video-preview" data-bs-toggle="modal" data-bs-target="#videoPlayModal">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200" alt="Course Video Cover" class="img-fluid w-100" style="max-height: 450px; object-fit: cover;">
+                                <div class="wac-video-overlay">
+                                    <div class="wac-play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-dark text-white d-flex justify-content-between align-items-center">
+                                <span class="small opacity-75"><i class="fas fa-play-circle me-2 text-warning"></i>Watch Program Preview (2:15 Mins)</span>
+                                <span class="badge bg-danger">Free Preview</span>
+                            </div>
+                        </div>
+
+                        <!-- Tabbed Content Section -->
+                        <div class="details-tabs-container mb-5">
+                            <ul class="nav nav-pills wac-custom-tabs mb-4" id="programTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Overview</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="objectives-tab" data-bs-toggle="tab" data-bs-target="#objectives" type="button" role="tab">Objectives</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="modules-tab" data-bs-toggle="tab" data-bs-target="#modules" type="button" role="tab">Modules</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="outcomes-tab" data-bs-toggle="tab" data-bs-target="#outcomes" type="button" role="tab">Learning Outcomes</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="competencies-tab" data-bs-toggle="tab" data-bs-target="#competencies" type="button" role="tab">Competencies</button>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content wac-glass-card p-4 p-md-5" id="programTabsContent">
+                                
+                                <!-- Overview -->
+                                <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                                    <h3 class="mb-4 fw-bold">Program Overview</h3>
+                                    <p class="lead">Accelerate your career in executive management on your own terms. The Professional Certified Manager (PCM) program is built for high-potential leaders and professionals seeking credentials that drive promotion, recognition, and performance.</p>
+                                    <p>Through practical modules, rich case studies, and short-video content, you will gain hands-on insights on managing dynamic teams, optimizing business performance, and formulating global strategic designs. As a self-paced online course, you can study from anywhere, anytime, taking full control of your progress.</p>
+                                    
+                                    <div class="row mt-4 g-4">
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-check-circle text-success fs-4 me-3"></i>
+                                                <span>Flexible, self-paced learning framework</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-check-circle text-success fs-4 me-3"></i>
+                                                <span>Verifiable global professional badges</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-check-circle text-success fs-4 me-3"></i>
+                                                <span>Dedicated support & tutor check-ins</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-check-circle text-success fs-4 me-3"></i>
+                                                <span>Lifetime alumni network access</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Objectives -->
+                                <div class="tab-pane fade" id="objectives" role="tabpanel">
+                                    <h3 class="mb-4 fw-bold">Course Objectives</h3>
+                                    <p class="mb-4">Our strategic objectives align with 21st-century organizational challenges to ensure practical readiness upon program completion:</p>
+                                    <ul class="wac-checkmark-list">
+                                        <li><i class="fas fa-check-circle"></i> Equip managers with deep strategic and systemic decision-making frameworks.</li>
+                                        <li><i class="fas fa-check-circle"></i> Cultivate agility, emotional intelligence, and remote-team leadership methods.</li>
+                                        <li><i class="fas fa-check-circle"></i> Introduce AI implementation, automation techniques, and modern productivity suites.</li>
+                                        <li><i class="fas fa-check-circle"></i> Build capabilities in financial risk assessment, budgeting, and performance metrics.</li>
+                                        <li><i class="fas fa-check-circle"></i> Foster complex crisis management methodologies and business continuity templates.</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Modules -->
+                                <div class="tab-pane fade" id="modules" role="tabpanel">
+                                    <h3 class="mb-4 fw-bold">Course Modules</h3>
+                                    <div class="accordion wac-custom-accordion" id="moduleAccordion">
+                                        
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mod1" aria-expanded="true">
+                                                    Module 1: Foundations of Strategic Leadership
+                                                </button>
+                                            </h2>
+                                            <div id="mod1" class="accordion-collapse collapse show" data-bs-parent="#moduleAccordion">
+                                                <div class="accordion-body">
+                                                    <p>Explore the core tenets of modern executive management. Understand systemic structures, cultural dynamics, and leadership styles.</p>
+                                                    <ul class="wac-checkmark-list mb-0">
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Modern Organization Theory & Dynamics</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Emotional Intelligence and Executive Presence</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Leading Virtual & Hybrid Teams</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod2" aria-expanded="false">
+                                                    Module 2: Analytical Decision Making & Financial Acumen
+                                                </button>
+                                            </h2>
+                                            <div id="mod2" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                                <div class="accordion-body">
+                                                    <p>Equip yourself with the tools to assess operational finance, build robust budgets, and lead data-driven initiatives.</p>
+                                                    <ul class="wac-checkmark-list mb-0">
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Data analytics for operational performance</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Financial statement analysis & cost control models</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Risk modeling and contingency planning</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod3" aria-expanded="false">
+                                                    Module 3: Project Management & Digital Acceleration
+                                                </button>
+                                            </h2>
+                                            <div id="mod3" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                                <div class="accordion-body">
+                                                    <p>Implement Agile, Lean, and Scrum frameworks to optimize deliverables, utilizing AI to automate repetitive workflows.</p>
+                                                    <ul class="wac-checkmark-list mb-0">
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Project lifecycle management (Agile & Hybrid)</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Introducing Artificial Intelligence inside the workplace</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Business automation tools & KPIs</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod4" aria-expanded="false">
+                                                    Module 4: Marketing Operations & Stakeholder Management
+                                                </button>
+                                            </h2>
+                                            <div id="mod4" class="accordion-collapse collapse" data-bs-parent="#moduleAccordion">
+                                                <div class="accordion-body">
+                                                    <p>Master modern B2B/B2C outreach strategies, stakeholder negotiation scripts, and public relationship operations.</p>
+                                                    <ul class="wac-checkmark-list mb-0">
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Strategic positioning and brand assets</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Executive negotiation & corporate governance</li>
+                                                        <li><i class="fas fa-arrow-right text-muted small"></i> Sustainable corporate responsibility frameworks</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                <!-- Learning Outcomes -->
+                                <div class="tab-pane fade" id="outcomes" role="tabpanel">
+                                    <h3 class="mb-4 fw-bold">Learning Outcomes</h3>
+                                    <p class="mb-4">Upon successful completion of the course, participants will be able to:</p>
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="p-3 border rounded-3 bg-light">
+                                                <h6 class="fw-bold text-primary"><i class="fas fa-chart-line me-2"></i>Strategic Execution</h6>
+                                                <p class="small text-muted mb-0">Formulate and execute 3-5 year corporate growth plans aligned with global market structures.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 border rounded-3 bg-light">
+                                                <h6 class="fw-bold text-primary"><i class="fas fa-users-cog me-2"></i>Performance Optimization</h6>
+                                                <p class="small text-muted mb-0">Identify and rectify operational bottlenecks using Lean and automation tools.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 border rounded-3 bg-light">
+                                                <h6 class="fw-bold text-primary"><i class="fas fa-coins me-2"></i>Financial Auditing</h6>
+                                                <p class="small text-muted mb-0">Draft, analyze, and manage multi-department budgets with advanced spreadsheets and tools.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 border rounded-3 bg-light">
+                                                <h6 class="fw-bold text-primary"><i class="fas fa-brain me-2"></i>Agile Transformation</h6>
+                                                <p class="small text-muted mb-0">Direct virtual and cross-functional teams in agile transformation environments.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Competencies -->
+                                <div class="tab-pane fade" id="competencies" role="tabpanel">
+                                    <h3 class="mb-4 fw-bold">Core Competencies Developed</h3>
+                                    <p class="mb-4">Develop actionable expertise in the following high-demand managerial fields:</p>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center p-3 border rounded bg-white">
+                                                <span class="badge bg-primary rounded-circle p-2 me-3"><i class="fas fa-chess-knight"></i></span>
+                                                <div>
+                                                    <h6 class="fw-bold mb-0">Strategic Planning</h6>
+                                                    <small class="text-muted">Vision mapping & goal setting</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center p-3 border rounded bg-white">
+                                                <span class="badge bg-success rounded-circle p-2 me-3"><i class="fas fa-comments"></i></span>
+                                                <div>
+                                                    <h6 class="fw-bold mb-0">Negotiation Tactics</h6>
+                                                    <small class="text-muted">Corporate communication scripts</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center p-3 border rounded bg-white">
+                                                <span class="badge bg-info rounded-circle p-2 me-3"><i class="fas fa-robot"></i></span>
+                                                <div>
+                                                    <h6 class="fw-bold mb-0">AI Integration</h6>
+                                                    <small class="text-muted">Workspace automation & LLMs</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="d-flex align-items-center p-3 border rounded bg-white">
+                                                <span class="badge bg-warning rounded-circle p-2 me-3"><i class="fas fa-file-invoice-dollar"></i></span>
+                                                <div>
+                                                    <h6 class="fw-bold mb-0">Financial Oversight</h6>
+                                                    <small class="text-muted">Cost planning & auditing</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Takeaways Section -->
+                        <section class="takeaways-section mb-5">
+                            <h2 class="section-title text-start mb-4">What You Will <span class="wac-text-brand">Take Away</span></h2>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="takeaway-card">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-warning p-2 me-3"><i class="fas fa-certificate fs-5"></i></span>
+                                            <h5 class="fw-bold mb-0">Verified PCM Credential</h5>
+                                        </div>
+                                        <p class="text-muted mb-0">A premium, verifiable digital badge and secure PDF certificate shareable directly to LinkedIn and CV directories.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="takeaway-card">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-success p-2 me-3"><i class="fas fa-folder-open fs-5"></i></span>
+                                            <h5 class="fw-bold mb-0">Executive Toolkit</h5>
+                                        </div>
+                                        <p class="text-muted mb-0">Over 30 downloadable spreadsheets, slides, negotiation templates, and project tracking dashboards ready to customize.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="takeaway-card">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-primary p-2 me-3"><i class="fas fa-network-wired fs-5"></i></span>
+                                            <h5 class="fw-bold mb-0">Alumni Network Membership</h5>
+                                        </div>
+                                        <p class="text-muted mb-0">Direct access to the exclusive global alumni directory featuring 10,000+ professionals for career support.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="takeaway-card">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-danger p-2 me-3"><i class="fas fa-headset fs-5"></i></span>
+                                            <h5 class="fw-bold mb-0">Strategic Coaching Session</h5>
+                                        </div>
+                                        <p class="text-muted mb-0">1-on-1 feedback on your Capstone project from our certified senior trainers to optimize your real-world outcomes.</p>
+                                    </div>
+                                </div>
+                                <!-- Takeaways with no description -->
+                                <div class="col-md-6">
+                                    <div class="takeaway-card d-flex align-items-center py-4">
+                                        <span class="badge bg-info p-2 me-3"><i class="fas fa-calendar-check fs-5"></i></span>
+                                        <h5 class="fw-bold mb-0">Weekly Live Q&amp;A Webinars Access</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="takeaway-card d-flex align-items-center py-4">
+                                        <span class="badge bg-secondary p-2 me-3"><i class="fas fa-tasks fs-5"></i></span>
+                                        <h5 class="fw-bold mb-0">Custom Curriculum Tracking Tools</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Exam Guideline Card -->
+                        <section class="exam-section mb-5">
+                            <h2 class="section-title text-start mb-4">Assessment & <span class="wac-text-brand">Exam Guidelines</span></h2>
+                            <div class="card guideline-card p-4">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="guideline-icon-box">
+                                        <i class="fas fa-file-signature"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-0">Evaluation Standards</h4>
+                                        <p class="small text-muted mb-0">Systemic testing structure for course completion</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-3">
+                                    <div class="col-md-4 col-6">
+                                        <div class="p-3 border rounded text-center bg-light">
+                                            <span class="d-block text-muted small text-uppercase">Number of Exams</span>
+                                            <span class="fs-4 fw-bold text-primary">01</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-6">
+                                        <div class="p-3 border rounded text-center bg-light">
+                                            <span class="d-block text-muted small text-uppercase">Question Type</span>
+                                            <span class="fs-5 fw-bold text-primary">50 MCQ Questions</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-6">
+                                        <div class="p-3 border rounded text-center bg-light">
+                                            <span class="d-block text-muted small text-uppercase">Duration</span>
+                                            <span class="fs-4 fw-bold text-primary">60 Minutes</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-6">
+                                        <div class="p-3 border rounded text-center bg-light">
+                                            <span class="d-block text-muted small text-uppercase">Total Marks</span>
+                                            <span class="fs-4 fw-bold text-primary">100 Marks</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-6">
+                                        <div class="p-3 border rounded text-center bg-light">
+                                            <span class="d-block text-muted small text-uppercase">Passing Score</span>
+                                            <span class="fs-4 fw-bold text-success">70% Marks</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-6">
+                                        <div class="p-3 border rounded text-center bg-light">
+                                            <span class="d-block text-muted small text-uppercase">Exam Mode</span>
+                                            <span class="fs-5 fw-bold text-primary">Online / Proctored</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 p-3 bg-warning-subtle text-warning-emphasis rounded-3 border border-warning-subtle small">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>Exam Retake Policy:</strong> Up to two complimentary retakes are allowed if the passing threshold is not met on the initial attempt. Retakes must be completed within 30 days.
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Important Info & Assignments Card -->
+                        <section class="important-info-section mb-5">
+                            <h2 class="section-title text-start mb-4">Important Info & <span class="wac-text-brand">Assignments</span></h2>
+                            <div class="card info-card p-4">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="info-icon-box">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-0">Syllabus Features & Timeline</h4>
+                                        <p class="small text-muted mb-0">Overview of assignment structures and learning milestones</p>
+                                    </div>
+                                </div>
+
+                                <div class="row g-4">
+                                    <!-- Features Column -->
+                                    <div class="col-md-6 border-end">
+                                        <h5 class="fw-bold mb-3 text-secondary"><i class="fas fa-sliders-h me-2"></i>Course Features</h5>
+                                        <table class="table table-borderless align-middle">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-muted ps-0" style="width: 160px;">Duration:</td>
+                                                    <td><span class="badge wac-badge-duration px-3 py-2">4 Months</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-muted ps-0">Short Videos:</td>
+                                                    <td><span class="badge wac-badge-videos px-3 py-2"><i class="fas fa-check-circle me-1"></i>Yes (High-Yield Materials)</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-muted ps-0">Mode of Learning:</td>
+                                                    <td><span class="badge wac-badge-self-paced px-3 py-2">Self-Paced (Online Portal)</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-muted ps-0">Study Pace:</td>
+                                                    <td><span>Approx. 4-6 hours per week recommended</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Assignments Column -->
+                                    <div class="col-md-6">
+                                        <h5 class="fw-bold mb-3 text-secondary"><i class="fas fa-book-open me-2"></i>Assignments (Total: 05)</h5>
+                                        <div class="assignment-flow ms-2">
+                                            
+                                            <!-- Step 1 -->
+                                            <div class="d-flex mb-3 align-items-start">
+                                                <span class="badge bg-secondary me-3 mt-1">01</span>
+                                                <div>
+                                                    <span class="fw-bold d-block">Pre-Course Assignment</span>
+                                                    <small class="text-muted">Learning & assessment purpose (Ungraded)</small>
+                                                </div>
+                                            </div>
+
+                                            <!-- Step 2 -->
+                                            <div class="d-flex mb-3 align-items-start">
+                                                <span class="badge bg-primary me-3 mt-1">03</span>
+                                                <div>
+                                                    <span class="fw-bold d-block">In-Course Assignments</span>
+                                                    <small class="text-muted">Combined Marks: <strong>100 Marks</strong> (Pass Mark: <strong>70%</strong>)</small>
+                                                </div>
+                                            </div>
+
+                                            <!-- Step 3 -->
+                                            <div class="d-flex align-items-start">
+                                                <span class="badge bg-success me-3 mt-1">01</span>
+                                                <div>
+                                                    <span class="fw-bold d-block">Capstone Projects</span>
+                                                    <small class="text-muted">Final project submission: <strong>300 Marks</strong> (Pass Mark: <strong>70%</strong>)</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Accreditation & Recognition -->
+                        <section class="accreditation-section mb-5">
+                            <h2 class="section-title text-start mb-4">International <span class="wac-text-brand">Recognition</span></h2>
+                            <div class="wac-accreditation-grid">
+                                <div class="wac-accreditation-item wac-glass-card text-center p-4">
+                                    <img src="https://images.unsplash.com/photo-1599305090598-fe179759c277?auto=format&fit=crop&q=80&w=100" alt="Logo" class="wac-brand-logo mb-3">
+                                    <h6 class="fw-bold">CPD UK Approved</h6>
+                                    <p class="small text-muted mb-0">Professional development credits.</p>
+                                </div>
+                                <div class="wac-accreditation-item wac-glass-card text-center p-4">
+                                    <img src="https://images.unsplash.com/photo-1599305090598-fe179759c277?auto=format&fit=crop&q=80&w=100" alt="Logo" class="wac-brand-logo mb-3">
+                                    <h6 class="fw-bold">CMI UK Affiliated</h6>
+                                    <p class="small text-muted mb-0">Management standard alignments.</p>
+                                </div>
+                                <div class="wac-accreditation-item wac-glass-card text-center p-4">
+                                    <img src="https://images.unsplash.com/photo-1599305090598-fe179759c277?auto=format&fit=crop&q=80&w=100" alt="Logo" class="wac-brand-logo mb-3">
+                                    <h6 class="fw-bold">ISO 9001:2015</h6>
+                                    <p class="small text-muted mb-0">Certified educational workflow.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Feedbacks (Testimonials) -->
+                        <section class="feedbacks-section mb-5">
+                            <h2 class="section-title text-start mb-4">Student <span class="wac-text-brand">Feedbacks</span></h2>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="feedback-card">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Student" class="feedback-avatar me-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0">Emily Sterling</h6>
+                                                <small class="text-muted">Operations Director, FinTech Global</small>
+                                                <div class="wac-stars d-block mt-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted fst-italic mb-0">"The PCM self-paced format was perfect for my schedule. I could complete the finance and data modules late in the evening and apply the learnings to my teams the very next day. The capstone feedback was invaluable."</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feedback-card">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Student" class="feedback-avatar me-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0">Rashid Al-Mansoori</h6>
+                                                <small class="text-muted">Project Manager, Saudi Logistics</small>
+                                                <div class="wac-stars d-block mt-1">
+                                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted fst-italic mb-0">"Amazing quality videos! Short, high-yield, and focused. The exam was rigorous, requiring deep understanding rather than plain memorization. Best investment for career progression."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="col-lg-4">
+                        <aside class="wac-sticky-sidebar">
+                            
+                            <!-- Pricing Card -->
+                            <div class="pricing-card wac-glass-card overflow-hidden mb-4">
+                                <div class="wac-pricing-header wac-bg-brand text-white p-4 text-center">
+                                    <span class="text-uppercase small fw-bold tracking-wider">Self-Paced Discount</span>
+                                    <h2 class="display-5 fw-bold mb-0">$499</h2>
+                                    <small class="opacity-75">Full Enrollment Certificate Access</small>
+                                </div>
+                                <div class="p-4">
+                                    <ul class="fee-list mb-4">
+                                        <li class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">Regular Fee</span>
+                                            <span class="text-decoration-line-through">$800</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-2 fw-bold text-success">
+                                            <span>Special Enrollment Fee</span>
+                                            <span>$499</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-2 text-primary">
+                                            <span>Payment Plan (3 Installments)</span>
+                                            <span>Available ($180 x 3)</span>
+                                        </li>
+                                    </ul>
+                                    
+                                    <a href="#" class="btn wac-btn-brand w-100 py-3 fw-bold text-uppercase mb-3"><i class="fas fa-graduation-cap me-2"></i>Enroll Now</a>
+                                    
+                                    <button class="btn btn-outline-secondary w-100 py-2.5 fw-bold text-uppercase mb-3" data-bs-toggle="modal" data-bs-target="#brochureModal">
+                                        <i class="fas fa-file-download me-2"></i>Download Brochure
+                                    </button>
+                                    
+                                    <button class="btn btn-light w-100 py-2.5 fw-bold text-uppercase mb-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                        <i class="fas fa-envelope-open-text me-2"></i>Contact for Info
+                                    </button>
+
+                                    <!-- Share option -->
+                                    <div class="border-top pt-3 text-center">
+                                        <span class="small text-muted d-block mb-2">Share this program with colleagues</span>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <a href="#" class="btn btn-outline-primary btn-sm rounded-circle" style="width: 35px; height: 35px; padding: 6px 0;"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#" class="btn btn-outline-info btn-sm rounded-circle" style="width: 35px; height: 35px; padding: 6px 0;"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle" style="width: 35px; height: 35px; padding: 6px 0;"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="btn btn-outline-success btn-sm rounded-circle" style="width: 35px; height: 35px; padding: 6px 0;"><i class="fab fa-whatsapp"></i></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-center small text-muted mt-3 mb-0"><i class="fas fa-shield-alt me-1"></i>Secure checkout, direct enrollment access</p>
+                                </div>
+                            </div>
+
+                            <!-- Additional info sidebar box -->
+                            <div class="contact-card wac-glass-card p-4">
+                                <h5 class="mb-3 border-bottom pb-2">Support Hotline</h5>
+                                <div class="mb-3">
+                                    <label class="small text-muted d-block mb-1">Direct Advisor Support</label>
+                                    <a href="tel:+442071234567" class="h6 text-decoration-none fw-bold text-dark">+44 207 123 4567</a>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small text-muted d-block mb-1">Support Email</label>
+                                    <a href="mailto:selfpaced@worldacademy.uk" class="h6 text-decoration-none fw-bold text-dark">selfpaced@worldacademy.uk</a>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ============ footer design start ============ -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>1010 Avenue, sw 54321, UK</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>9876543210</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="./images/New and Final Logo White-10.png" class="img-fluid" alt="logo"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>World Academy for Research & Development – Trusted since 2008 for globally recognized credentials and strategic partnerships that drive professional growth and organizational success.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2026, All Right Reserved <a href="https://www.worldacademy.uk">World Academy</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ============ footer design end ============ -->
+
+    <!-- ============ MODALS SECTION ============ -->
+
+    <!-- 1. VIDEO PLAY LIGHTBOX MODAL -->
+    <div class="modal fade" id="videoPlayModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark border-0">
+                <div class="modal-header border-0 text-white p-2">
+                    <button type="button" class="btn-close btn-close-white" data-bs-remove="iframe" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <!-- We use a placeholder embed that complies with standard video players -->
+                        <iframe id="videoFrame" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. CONTACT FOR INFO MODAL -->
+    <div class="modal fade wac-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="wac-modal-header modal-header">
+                    <h5 class="modal-title fw-bold" id="contactModalLabel"><i class="fas fa-envelope-open-text me-2"></i>Request Course Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="wac-modal-body modal-body">
+                    <form id="contactInfoForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label fw-semibold">Full Name *</label>
+                            <input type="text" class="form-control py-2" id="contactName" placeholder="e.g. John Doe" required>
+                            <div class="invalid-feedback">Please enter your name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label fw-semibold">Email Address *</label>
+                            <input type="email" class="form-control py-2" id="contactEmail" placeholder="name@company.com" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label fw-semibold">Phone Number *</label>
+                            <input type="tel" class="form-control py-2" id="contactPhone" placeholder="+1 (555) 000-0000" required>
+                            <div class="invalid-feedback">Please enter your telephone number.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactOrg" class="form-label fw-semibold">Current Organization / Student ID</label>
+                            <input type="text" class="form-control py-2" id="contactOrg" placeholder="e.g. Corporate Inc.">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label fw-semibold">Your Message *</label>
+                            <textarea class="form-control" id="contactMessage" rows="3" placeholder="Please type your inquiry..." required></textarea>
+                            <div class="invalid-feedback">Please share your questions.</div>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn wac-btn-brand py-2.5 fw-bold text-uppercase">Send Inquiry</button>
+                        </div>
+                    </form>
+                    <div id="contactSuccessMessage" class="alert alert-success mt-3 d-none text-center" role="alert">
+                        <i class="fas fa-check-circle me-2"></i> Inquiry submitted successfully! An advisor will reach out shortly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. DOWNLOAD BROCHURE MODAL -->
+    <div class="modal fade wac-modal" id="brochureModal" tabindex="-1" aria-labelledby="brochureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="wac-modal-header modal-header">
+                    <h5 class="modal-title fw-bold" id="brochureModalLabel"><i class="fas fa-file-download me-2"></i>Download Program Syllabus</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="wac-modal-body modal-body">
+                    <p class="small text-muted mb-4">Please fill in your details to immediately unlock the full PDF brochure containing curriculum details, study schedule templates, and sample tools.</p>
+                    <form id="brochureDownloadForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="brochureName" class="form-label fw-semibold">Full Name *</label>
+                            <input type="text" class="form-control py-2" id="brochureName" placeholder="John Doe" required>
+                            <div class="invalid-feedback">Please enter your name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brochureEmail" class="form-label fw-semibold">Email Address *</label>
+                            <input type="email" class="form-control py-2" id="brochureEmail" placeholder="john@domain.com" required>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brochurePhone" class="form-label fw-semibold">Phone Number *</label>
+                            <input type="tel" class="form-control py-2" id="brochurePhone" placeholder="+1 (555) 123-4567" required>
+                            <div class="invalid-feedback">Please enter your phone number.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brochureRole" class="form-label fw-semibold">Current Designation *</label>
+                            <input type="text" class="form-control py-2" id="brochureRole" placeholder="e.g. Operations Manager" required>
+                            <div class="invalid-feedback">Please specify your job title or role.</div>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn wac-btn-brand py-2.5 fw-bold text-uppercase"><i class="fas fa-arrow-circle-down me-2"></i>Download PDF</button>
+                        </div>
+                    </form>
+                    <div id="brochureSuccessMessage" class="alert alert-success mt-3 d-none text-center" role="alert">
+                        <i class="fas fa-check-circle me-2"></i> Form submitted successfully! Your download is starting...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FontAwesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Interactive script for modal submit & video handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form validation and success response for Contact Modal
+            const contactForm = document.getElementById('contactInfoForm');
+            const contactSuccess = document.getElementById('contactSuccessMessage');
+            
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (!contactForm.checkValidity()) {
+                    event.stopPropagation();
+                    contactForm.classList.add('was-validated');
+                } else {
+                    contactForm.classList.remove('was-validated');
+                    // Mock success submit
+                    contactForm.classList.add('d-none');
+                    contactSuccess.classList.remove('d-none');
+                    setTimeout(() => {
+                        // Reset form
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                        modal.hide();
+                        setTimeout(() => {
+                            contactForm.reset();
+                            contactForm.classList.remove('d-none');
+                            contactSuccess.classList.add('d-none');
+                        }, 500);
+                    }, 2000);
+                }
+            });
+
+            // Form validation and success response for Brochure Download Modal
+            const brochureForm = document.getElementById('brochureDownloadForm');
+            const brochureSuccess = document.getElementById('brochureSuccessMessage');
+
+            brochureForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (!brochureForm.checkValidity()) {
+                    event.stopPropagation();
+                    brochureForm.classList.add('was-validated');
+                } else {
+                    brochureForm.classList.remove('was-validated');
+                    brochureForm.classList.add('d-none');
+                    brochureSuccess.classList.remove('d-none');
+                    
+                    // Simulate brochure file download trigger
+                    const mockDownloadLink = document.createElement('a');
+                    mockDownloadLink.href = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'; // Standard sample PDF
+                    mockDownloadLink.download = 'PCM_Self_Paced_Syllabus.pdf';
+                    mockDownloadLink.target = '_blank';
+                    document.body.appendChild(mockDownloadLink);
+                    mockDownloadLink.click();
+                    document.body.removeChild(mockDownloadLink);
+
+                    setTimeout(() => {
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('brochureModal'));
+                        modal.hide();
+                        setTimeout(() => {
+                            brochureForm.reset();
+                            brochureForm.classList.remove('d-none');
+                            brochureSuccess.classList.add('d-none');
+                        }, 500);
+                    }, 2000);
+                }
+            });
+
+            // Stop youtube video iframe playback when modal hides
+            const videoModalEl = document.getElementById('videoPlayModal');
+            const videoFrame = document.getElementById('videoFrame');
+            const originalSrc = videoFrame.src;
+
+            // Trigger autoplay when modal is shown
+            videoModalEl.addEventListener('shown.bs.modal', function () {
+                videoFrame.src = originalSrc + "?autoplay=1";
+            });
+
+            // Stop playing on close
+            videoModalEl.addEventListener('hidden.bs.modal', function () {
+                videoFrame.src = "";
+            });
+        });
+    </script>
+</body>
+</html>
