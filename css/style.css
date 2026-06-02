@@ -4112,5 +4112,476 @@ a {
   -webkit-backdrop-filter: blur(8px);
   padding: 18px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
+}
+
+/* ============================================
+   Live Events Section
+   ============================================ */
+
+.wac-live-events-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1a2744 50%, #0f2030 100%);
+  overflow: hidden;
+}
+
+/* Decorative blobs */
+.wac-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+.wac-blob-1 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #716027, transparent 70%);
+  top: -120px;
+  left: -100px;
+}
+.wac-blob-2 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #265367, transparent 70%);
+  bottom: -80px;
+  right: -60px;
+}
+
+/* Section title overrides for dark bg */
+.wac-live-events-section .section-title h3 {
+  color: #fff;
+}
+
+.wac-live-subtitle {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Pulsing LIVE badge (section header) */
+.wac-live-badge-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #f87171;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+}
+.wac-live-dot {
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  display: inline-block;
+  animation: wac-dot-blink 1.2s ease-in-out infinite;
+}
+
+/* ---- Event Card ---- */
+.wac-event-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.wac-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.4);
+  border-color: rgba(113,96,39,0.5);
+}
+
+/* Card header gradient strips */
+.wac-event-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+.wac-event-hdr-1 { background: linear-gradient(90deg, #716027 0%, #9a8040 100%); }
+.wac-event-hdr-2 { background: linear-gradient(90deg, #265367 0%, #3a7a96 100%); }
+.wac-event-hdr-3 { background: linear-gradient(90deg, #2d5a27 0%, #45885d 100%); }
+
+.wac-event-category {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Mini pulsing LIVE tag on cards */
+.wac-event-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+.wac-dot-pulse {
+  width: 6px;
+  height: 6px;
+  background: #f87171;
+  border-radius: 50%;
+  display: inline-block;
+  animation: wac-dot-blink 1.2s ease-in-out infinite;
+}
+@keyframes wac-dot-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.7); }
+}
+
+/* Card body */
+.wac-event-card-body {
+  padding: 22px 22px 0 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wac-event-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Meta items */
+.wac-event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.wac-event-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.87rem;
+}
+.wac-event-meta-item i {
+  color: rgba(255,255,255,0.4);
+  width: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.wac-event-meta-item em {
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+.wac-seats-left {
+  color: #fb923c !important;
+  font-weight: 600;
+}
+
+/* Countdown timer strip */
+.wac-event-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 12px 8px;
+  margin-bottom: 20px;
+}
+.wac-cd-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+}
+.wac-cd-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.wac-cd-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+.wac-cd-sep {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 14px;
+}
+
+/* Card footer buttons */
+.wac-event-card-footer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 0 22px 0;
+  margin-top: auto;
+}
+.wac-event-register-btn {
+  flex: 1;
+  text-align: center;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+.wac-event-register-btn:hover {
+  background: var(--brand-hover);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.wac-event-reminder-btn {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+.wac-event-reminder-btn:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+}
+
+/* "View All" button */
+.wac-view-all-events-btn {
+  display: inline-block;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+  padding: 12px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.wac-view-all-events-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---- Reminder Modal ---- */
+.wac-reminder-modal {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+}
+.wac-reminder-modal-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1a2744 100%);
+  border-bottom: none;
+  padding: 24px 24px 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.wac-reminder-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(113,96,39,0.25);
+  border: 1px solid rgba(113,96,39,0.5);
+  color: #d4af60;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+.wac-reminder-modal-header .modal-title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.wac-reminder-event-name {
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.wac-reminder-event-date {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.82rem;
+}
+.wac-form-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #334155;
+  margin-bottom: 6px;
+  display: block;
+}
+.wac-form-input {
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.wac-form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(113,96,39,0.12);
+  outline: none;
+}
+.wac-reminder-submit-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.wac-reminder-submit-btn:hover {
+  background: var(--brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(113,96,39,0.3);
+}
+.wac-reminder-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  color: #166534;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+.wac-reminder-success i {
+  color: #22c55e;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   Live Event Card – Rich Image Header
+   ============================================ */
+
+/* Override: card header is now image-based */
+.wac-event-card-header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Dark gradient overlay */
+.wac-event-hdr-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 15, 30, 0.45) 0%,
+    rgba(10, 15, 30, 0.72) 60%,
+    rgba(10, 15, 30, 0.92) 100%
+  );
+  z-index: 1;
+}
+
+/* Tinted overlays per card */
+.wac-overlay-blue {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 40, 80, 0.45) 0%,
+    rgba(20, 40, 80, 0.72) 60%,
+    rgba(10, 25, 55, 0.92) 100%
+  );
+}
+.wac-overlay-green {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 40, 20, 0.45) 0%,
+    rgba(10, 40, 20, 0.72) 60%,
+    rgba(5, 28, 15, 0.92) 100%
+  );
+}
+
+/* Top row: category pill + LIVE tag */
+.wac-event-hdr-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 0 16px;
+}
+
+/* Speaker row at bottom of header */
+.wac-event-hdr-speaker {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 14px 16px;
+}
+
+/* Circular speaker photo */
+.wac-speaker-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+/* Speaker name + org */
+.wac-speaker-name {
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.wac-speaker-org {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.72rem;
+  margin-top: 1px;
+}
+
+/* Subtle image zoom on card hover */
+.wac-event-card:hover .wac-event-card-header {
+  background-size: 110%;
+}
+.wac-event-card-header {
+  transition: background-size 0.5s ease;
 }
