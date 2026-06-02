@@ -1687,6 +1687,11 @@ a {
 
 /* ============ Testimonial Area Start ============ */
 
+
+.h-testimonial-sec .right-upside-down-shape{
+  z-index: 999;
+}
+
 .gaa-testimonial-section {
   padding: 80px 0;
 }
