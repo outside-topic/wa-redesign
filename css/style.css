@@ -612,6 +612,7 @@ a {
 
 .our_events {
   background: #f5f7fb;
+  position: absolute;
 }
 
 .video-card {
@@ -661,6 +662,10 @@ a {
   margin: 0;
   font-size: 14px;
   color: #666;
+}
+
+.our_events .left-down-shape{
+  bottom: 0;
 }
 
 /* ====== Our Event Section End ====== */
